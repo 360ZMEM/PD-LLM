@@ -31,7 +31,7 @@ Before proceeding, please ensure:
 - Provide valid LLM API keys or correctly configure local open-source model calls.
 - Obtain access permissions to the [Parkinson Progression Markers Initiative (PPMI) database](https://www.ppmi-info.org/access-data-specimens/download-data) and place the dataset in the designated directory.
 
-All configurable parameters can be modified in `config.py`. Additionally, different models may require specific LangChain invocation methods, so please verify the code in Lines 363-397 of `llm_predict.py` according to your setup.
+All configurable parameters can be modified in `config.py`. Additionally, different models may require specific LangChain invocation methods, so please verify the code in lines 363-397 of `llm_predict.py` according to your setup.
 
 ---
 
@@ -90,7 +90,6 @@ url={http://dx.doi.org/10.36227/techrxiv.173929691.12336246/v1},
 DOI={10.36227/techrxiv.173929691.12336246/v1},
 publisher={Institute of Electrical and Electronics Engineers (IEEE)},
 author={Zhang, Rongqian and Xie, Guanwen and Ying, Jie and Hua, Zhongsheng},
-year={2025},
-month=feb}
+year={2025}
 ```
 
