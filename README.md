@@ -31,7 +31,7 @@ Before proceeding, please ensure:
 - Provide valid LLM API keys or correctly configure local open-source model calls.
 - Obtain access permissions to the [Parkinson Progression Markers Initiative (PPMI) database](https://www.ppmi-info.org/access-data-specimens/download-data) and place the dataset in the designated directory.
 
-All configurable parameters can be reviewed in `config.py`. Additionally, different models may require specific LangChain invocation methods, so please verify the code in Lines 363-397 of `llm_predict.py` according to your setup.
+All configurable parameters can be modified in `config.py`. Additionally, different models may require specific LangChain invocation methods, so please verify the code in Lines 363-397 of `llm_predict.py` according to your setup.
 
 ---
 
@@ -39,7 +39,7 @@ All configurable parameters can be reviewed in `config.py`. Additionally, differ
 
 First, execute the following command to generate the synthetic PPMI dataset and train the UPDRS score prediction model:
 
-```python
+```bash
 python dataset_gen.py
 ```
 
