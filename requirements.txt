@@ -1,0 +1,13 @@
+seaborn
+pandas
+filelock
+pickle
+matplotlib
+tqdm
+joblib
+tensorflow-cpu
+keras
+langchain_community
+langchain
+langchain_openai
+colour
