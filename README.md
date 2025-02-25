@@ -90,6 +90,6 @@ url={http://dx.doi.org/10.36227/techrxiv.173929691.12336246/v1},
 DOI={10.36227/techrxiv.173929691.12336246/v1},
 publisher={Institute of Electrical and Electronics Engineers (IEEE)},
 author={Zhang, Rongqian and Xie, Guanwen and Ying, Jie and Hua, Zhongsheng},
-year={2025}
+year={2025}}
 ```
 
