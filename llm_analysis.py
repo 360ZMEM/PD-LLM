@@ -201,20 +201,10 @@ for tl in med_take:
 # plt.show()
 
 
-
-LLM_adv_idx = list(np.argsort(LLM_adv)) 
-
-print(patient_patno[LLM_adv_idx[:15]])
-print(LLM_adv[LLM_adv_idx[:15]])
-
-rl = np.array([r.shape[0] for r in trimmed_realtrajec])
-print(rl[LLM_adv_idx[:15]]) 
-
-
 TARG_PATIENT = 3507
 
-RATIO = 0.201
-pred_updrs_mean = [np.mean(r,axis=0)[5:] for r in trimmed_predtrajec]
+RATIO = 0.2 # controlling overlap
+pred_updrs_mean = [np.mean(r,axis=0)[5:] for r in trimmed_predtrajec] # Initial 5 records are used as history
 pred_LLM_updrs_mean = [np.mean(r,axis=0)[5:] for r in LLM_trimmed_predtrajec]
 pred_RL_updrs_mean = [np.mean(r,axis=0)[5:] for r in RL_trimmed_predtrajec]
 pred_updrs_std = [np.std(r,axis=0)[5:] * RATIO for r in trimmed_predtrajec]
