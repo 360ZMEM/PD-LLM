@@ -1,8 +1,4 @@
 from __future__ import division
-
-import time
-import math
-import random
 import numpy as np
 import gc
 

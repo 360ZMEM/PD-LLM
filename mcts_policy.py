@@ -1,21 +1,14 @@
 from __future__ import division
 import os 
-from random import choice
 import sys
-
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(BASE_DIR)
 import copy
 from mcts import mcts
-from functools import reduce
-import operator
 import time
-
 import pandas as pd
 import numpy as np
-import datetime
 import joblib
-import tqdm
 from funcs import *
 from problems import *
 from config import *

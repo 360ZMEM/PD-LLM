@@ -1,31 +1,25 @@
 # -------------------------------------------------------
-
-import json
 import os
-from pyexpat import model
 import pandas as pd
 import numpy as np
 import time
-import datetime
 import sys
 import copy
 import joblib
-import tqdm
-import matplotlib.pyplot as plt
 import re
 import pickle
 
 import gc
 import threading
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
 sys.path.append(BASE_DIR)
 from filelock import FileLock
 from funcs import *
 from problems import *
 from config import *
-from io import StringIO
 import argparse
+os.environ["HF_ENDPOINT"] = model_proxy_base
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--similar_case_num", type=int, default=2, help="The number of similar cases")
