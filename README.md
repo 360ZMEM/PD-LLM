@@ -2,6 +2,8 @@
 
 [![TechRxiv](https://img.shields.io/badge/TechRxiv-173929691.12336246-2cbbe9.svg)](https://www.techrxiv.org/users/887442/articles/1265499-leveraging-large-language-models-for-personalized-parkinson-s-disease-treatment) [![PDF](https://img.shields.io/badge/PDF-Supp_Material-77DDFF.svg)](https://github.com/360ZMEM/PD-LLM/blob/main/files/supplementary_material.pdf) [![Commit](https://img.shields.io/github/last-commit/360ZMEM/PD-LLM?color=green)](https://github.com/360ZMEM/PD-LLM)
 
+:information_source: **The supplementary material can be accessed from this link:** [![PDF](https://img.shields.io/badge/PDF-Supp_Material-77DDFF.svg)](https://github.com/360ZMEM/PD-LLM/blob/main/files/supplementary_material.pdf).
+
 This repository contains Python code implementation and Supplementary Materials for the paper "Leveraging Large Language Models for Personalized Parkinson’s Disease Treatment".
 
 ![arc](files/arc.png)
