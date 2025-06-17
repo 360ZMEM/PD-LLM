@@ -1,7 +1,6 @@
 seaborn
 pandas
 filelock
-pickle
 matplotlib
 tqdm
 joblib
