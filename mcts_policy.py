@@ -249,9 +249,9 @@ fin_RAGprob = []
 def simulate_sequence(p, conv_models, use_reg, updrs_start, policy_simulators=None, data_lev=None, updrs_lag=6, lev_lag=1, sd_list=[0]*5, use_nonlev=False,
                       diff=False, pharmaco=True, ryt=False, use_ppmi_simulator=False,
                       max_led=None, rand_ppmi=False,  saveRAG=True, 
-                      pred_updrs = None, in_row = 0, lev_input = None, rand_true_choice = 1): 
+                      pred_updrs = None, in_row = 0, lev_input = None, choice_rand_ratio = 1): 
     
-    include_dose_num = int(RL_filter * rand_true_choice)
+    include_dose_num = int(RL_filter * choice_rand_ratio)
 
     lbound = 0; ubound = 53 
     updrs_start_ = copy.deepcopy(updrs_start)
@@ -410,7 +410,7 @@ def MCTS_expand(tree_node, PATNO):
         tree_node.children[lev_idx[int(idx/n)]] = newNode; 
 
         real_updrs_, pred_updrs_, rag_str_, lev_input_, lev_idx_, bad_examples_, nonlev_ = simulate_sequence(PATNO, conv_models=lstm_models, use_ppmi_simulator=True,policy_simulators=policy_simulators, updrs_lag=updrs_lag, lev_lag=lev_lag, sd_list=sd_list, use_nonlev=use_nonlev, use_reg=use_reg, updrs_start=updrs[0:updrs_lag],data_lev=None,max_led=max_led_list[int(np.where(patients == PATNO)[0])], 
-        pred_updrs = pred_updrs[idx:idx+n], in_row=start_row + 1, rand_true_choice = second_selection_rate)
+        pred_updrs = pred_updrs[idx:idx+n], in_row=start_row + 1, choice_rand_ratio = second_selection_rate)
         newNode.nonlev = nonlev_
         newNode.get_med_history()
 
@@ -423,7 +423,7 @@ def MCTS_expand(tree_node, PATNO):
 
             for frow in range(2,MCTS_in_depth):
                 real_updrs__, pred_updrs__, rag_str__, lev_input__, lev_idx__, bad_examples__, nonlev__ = simulate_sequence(PATNO, conv_models=lstm_models, use_ppmi_simulator=True,policy_simulators=policy_simulators, updrs_lag=updrs_lag, lev_lag=lev_lag, sd_list=sd_list, use_nonlev=use_nonlev, use_reg=use_reg, updrs_start=updrs[0:updrs_lag],data_lev=None,max_led=max_led_list[int(np.where(patients == PATNO)[0])],
-                 pred_updrs = pred_updrs__, in_row=start_row + frow, rand_true_choice = (1 / RL_filter))
+                 pred_updrs = pred_updrs__, in_row=start_row + frow, choice_rand_ratio = (1 / RL_filter))
                 newNode_.children[lev_idx[0]] = mcts.treeNode(newNode_,depth=start_row + frow,choice= (real_updrs__,pred_updrs__,rag_str__[0],lev_input__[0],lev_idx__[0],bad_examples__))
                 newNode_.nonlev = nonlev__
                 newNode_.get_med_history()
@@ -442,10 +442,8 @@ sd_list = np.array(sd_list) * sd_mult
 n = 8  
 RL_filter = 73 
 MCTS_in_depth = 4 
-bad_choose_rate = 0.2 
 second_selection_rate = 0.33
-ALL_PART = 8
-FIN_LENGTH = 900
+FIN_LENGTH = 400
 FIN_LENGTH = min(len(patients),FIN_LENGTH) # truncate
 if os.path.exists(RAG_path) and DEBUG == False and args.patient == 0:
     os.remove(RAG_path)

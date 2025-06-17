@@ -43,7 +43,7 @@ class treeNode():
         gc.collect()
         self.children = {}
 
-    def getDeltUpdrs(self):
+    def getDeltUpdrs(self): # back propagate
         node = self
         _, pred_updrs, _, _, _, _ = node.choice
         pred_updrs = np.flip(pred_updrs, axis=1)
@@ -65,9 +65,6 @@ class treeNode():
         fin_child_idx = np.argsort(np.array(child_numerical_rew))[:best_child_num]
         self.best_children = [all_children[i] for i in fin_child_idx]
         self.best_children_idx = [all_children_idx[i] for i in fin_child_idx]
-        fin_child_idx = np.flip(np.argsort(np.array(child_numerical_rew)))[:best_child_num]
-        self.bad_children = [all_children[i] for i in fin_child_idx]
-        self.bad_children_idx = [all_children_idx[i] for i in fin_child_idx]
         return self.best_children
         
     def getRAGtext(self) -> str:  
