@@ -86,12 +86,14 @@ Data used in this article were obtained from the [Parkinson Progression Markers 
 If you find it useful for your work please cite:
 
 ```bibtex
-@article{Zhang_2025,
-title={Leveraging Large Language Models for Personalized Parkinson's Disease Treatment},
-url={http://dx.doi.org/10.36227/techrxiv.173929691.12336246/v1},
-DOI={10.36227/techrxiv.173929691.12336246/v1},
-publisher={Institute of Electrical and Electronics Engineers (IEEE)},
-author={Zhang, Rongqian and Xie, Guanwen and Ying, Jie and Hua, Zhongsheng},
-year={2025}}
+@article{zhang2025leveraging,
+  title={Leveraging Large Language Models for Personalized Parkinson's Disease Treatment},
+  author={Zhang, Rongqian and Xie, Guanwen and Ying, Jie and Hua, Zhongsheng},
+  journal={IEEE journal of biomedical and health informatics},
+  year={2026},
+  volume={30},
+  number={2},
+  pages={1693-1706},
+  doi={10.1109/JBHI.2025.3594014}}
 ```
 
